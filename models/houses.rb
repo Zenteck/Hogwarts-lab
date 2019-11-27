@@ -39,6 +39,4 @@ class House
     return House.new(house)
   end
 
-
-
 end
