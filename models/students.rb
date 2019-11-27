@@ -1,10 +1,10 @@
 require_relative('../db/sql_runner.rb')
-require_relative('../models/houses.rb')
+require_relative('./houses.rb')
 
 class Student
 
   attr_reader :id
-  attr_accessor :first_name, :last_name, :house, :age
+  attr_accessor :first_name, :last_name, :house_id, :age
 
   def initialize(student)
     @id = student['id'].to_i() if student['id']

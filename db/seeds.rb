@@ -1,7 +1,7 @@
 require_relative('../models/students')
+require_relative('../models/houses')
 require('pry')
 
-House.delete_all()
 Student.delete_all()
 House.delete_all()
 
@@ -33,7 +33,7 @@ student1 = Student.new(
   {
   'first_name' => 'Michael',
   'last_name' => 'Scott',
-  'house' => hufflepuff.id,
+  'house_id' => hufflepuff.id,
   'age' => 35
   }
 )
@@ -43,7 +43,7 @@ student2 = Student.new(
   {
   'first_name' => 'Jebediah',
   'last_name' => 'Kerman',
-  'house' => gryfinndor.id,
+  'house_id' => gryfinndor.id,
   'age' => 14
   }
 )
@@ -53,7 +53,7 @@ student3 = Student.new(
   {
     'first_name' => 'Malcolm',
     'last_name' => 'Tucker',
-    'house' => slytherin.id,
+    'house_id' => slytherin.id,
     'age' => 45
   }
 )
@@ -62,7 +62,7 @@ student3.save()
 student4 = Student.new({
   'first_name' => 'The',
   'last_name' => 'Doctor',
-  'house' => ravenclaw.id,
+  'house_id' => ravenclaw.id,
   'age' => 45
   })
 

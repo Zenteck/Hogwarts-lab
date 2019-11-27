@@ -1,8 +1,10 @@
 require_relative('../db/sql_runner.rb')
 
-attr_reader :name, :logo, :id
-
 class House
+
+  attr_reader :id
+  attr_accessor :name, :logo
+
 
   def initialize(info)
     @id = info['id'].to_i() if ['id']
@@ -23,6 +25,20 @@ class House
     sql = "DELETE FROM houses"
     SqlRunner.run(sql)
   end
+
+  def self.all()
+    sql = "SELECT * FROM houses"
+    houses = SqlRunner.run(sql)
+    return houses.map{|house| House.new(house)}
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM houses WHERE id = $1"
+    values = [id]
+    house = SqlRunner.run(sql, values)[0]
+    return House.new(house)
+  end
+
 
 
 end
