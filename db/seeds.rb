@@ -5,7 +5,7 @@ Student.delete_all()
 
 student1 = Student.new(
   {
-  'first_name' => 'Michael',
+  'first_name' => 'yerda',
   'last_name' => 'Scott',
   'house' => 'Hufflepuff',
   'age' => 35
