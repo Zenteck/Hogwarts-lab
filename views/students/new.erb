@@ -5,14 +5,13 @@
   <label for="last-name">last_name Name:</label>
   <input type="text" id="last-name" name="last_name">
 
-  <label for="house">House</label>
-  <select name="house" id="house">
-    <option selected disabled value="">Choose student house</option>
-
+  <label for="house">House:</label>
+  <select name="house_id" id="house">
     <% for house in @houses %>
-      <option value="<%= house %>"><%= house %></option>
-    <% end  %>
-
+      <option value="<%= house.id %>">
+        <%= house.name() %>
+      </option>
+    <% end %>
   </select>
 
   <label for="age">Age:</label>
