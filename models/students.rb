@@ -27,5 +27,17 @@ class Student
     SqlRunner.run(sql)
   end
 
+  def self.all()
+    sql = "SELECT * FROM students"
+    students = SqlRunner.run(sql)
+    return students.map{|student| Student.new(student)}
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM students WHERE id = $1"
+    values = [id]
+    student = SqlRunner.run(sql, values)[0]
+    return Student.new(student)
+  end
 
 end
