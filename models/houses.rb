@@ -7,7 +7,7 @@ class House
   def initialize(info)
     @id = info['id'].to_i() if ['id']
     @name = info['name']
-    @logo = info('logo')
+    @logo = info['logo']
   end
 
   def save()

@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner.rb')
+require_relative('../models/houses.rb')
 
 class Student
 
@@ -9,15 +10,15 @@ class Student
     @id = student['id'].to_i() if student['id']
     @first_name = student['first_name']
     @last_name = student['last_name']
-    @house = student['house']
+    @house_id = student['house_id'].to_i()
     @age = student['age'].to_i()
   end
 
   def save()
     sql = "INSERT INTO students
-    (first_name, last_name, house, age)
+    (first_name, last_name, house_id, age)
     VALUES ($1, $2, $3, $4) RETURNING id"
-    values = [@first_name, @last_name, @house, @age]
+    values = [@first_name, @last_name, @house_id, @age]
     result = SqlRunner.run(sql, values)
     @id = result[0]['id'].to_i()
   end
