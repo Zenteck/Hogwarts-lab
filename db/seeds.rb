@@ -23,6 +23,16 @@ student2 = Student.new(
 )
 student2.save()
 
+student3 = Student.new(
+  {
+    'first_name' => 'Malcolm',
+    'last_name' => 'Tucker',
+    'house' => 'Slytherin',
+    'age' => 45
+  }
+)
+student3.save()
+
 
 binding.pry
 
